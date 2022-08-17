@@ -1,0 +1,87 @@
+lista_productos= []
+producto = len(lista_productos)
+stock_minimo = 3
+
+
+#MENU
+while True:
+    print(
+           'Bienvenido a @ddupla.accesorios\n'
+                          
+            '1. Agregar stock\n'
+            '2. Agregar stock a un producto existente\n'
+            '3. Alerta de stock\n'
+            '4. Menu para administradores\n'
+            '5. Menu para clientes\n'
+            '6. Obtener un cupon de descuento\n'
+            '7. Contacto'
+            )
+
+
+    seleccion = input("\n >>>")
+
+    if seleccion == 1:
+        nuevo_producto = input(str("Ingrese el nuevo producto \n >>>"))
+        lista_productos.append(nuevo_producto)
+
+    elif selecccion == 2:
+        producto = input('¿A que producto deseas agregar stock? \n >>>')
+        if producto in lista_productos:
+            stock_producto = int(input(f'stock de {producto}: '))
+            lista__productos.extend([producto]*(stock_producto-1))
+        else:
+            print('Producto no encontrado')
+
+    elif seleccion == 3:
+        if stock_minimo <= stock_producto:
+            print('ALERTA DE STOCK! tienes poco stock')
+        else:
+            print('Estas bien con el stock, nada para preocupar')
+
+
+    elif seleccion == 4:
+            contraseña = input(int('Ingrese la clave de administrador \n >>>'))
+            if contraseña == 1234:
+                print(""
+                    "1. Cambiar minimo de alerta de stock\n"
+                    "2. Buscar productos por cantidad de stock\n"
+                    "3. Ordenar por nombre"
+                      )
+
+                seleccion_admin = input(int(">>>"))
+                if seleccion_admin == 1:
+                    stock = int(input('introduce el nuevo minimo de stock para alerta\n>>> '))
+                    stock_minimo = stock
+
+                if seleccion_admin == 2:
+                    producto_a_buscar = input('producto a buscar\n>>>')
+                    if producto_a_buscar in lista_productos:
+                        print(f'el producto: {producto_a_buscar}, tiene: {stock_producto}')
+                    else:
+                        print('producto no disponible...')
+
+                if seleccion_admin == 3:
+                    lista_productos.sort()
+                    print(lista_productos)
+
+                else:
+                    print('Contraseña incorrecta')
+
+    if seleccion == 5:
+        print("Bienvenido al menu para clientes\n"
+        "1. Obtener un cupon de descuento\n"
+        "2. Contacto"
+              )
+
+        seleccion_clientes = input(int(">>>"))
+
+        if seleccion_clientes == 1:
+            cupon = (int)(Math.random() * 1000 + 1)
+            print(f"Tu cupon es {cupon}")
+
+        if seleccion_clientes == 2:
+            print("INSTAGRAM: @ddupla.accesorios\n WHATSAPP: 35166566706\n EMAIL: ddupla.accesorios@gmail.com"
+                 )
+
+        else:
+            print("Valor incorrecto")
